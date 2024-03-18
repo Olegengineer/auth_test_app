@@ -3,12 +3,11 @@ import { create } from 'zustand';
 const userStore = create((set) => ({
   user: {
     email: '',
-    password: '',
     error: null,
     isLoading: false,
-    fetchData: null,
 
     // yeah, save temporary fields is not ok, better to use useState hook.
+    password: '',
     newPassword: null,
     passwordConfirmation: null
   },

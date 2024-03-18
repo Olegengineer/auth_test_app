@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import userStore from '../store/user-store';
 import notifierStore from '../store/notifier-store';
 import useFetch from './use-fetch';
@@ -30,7 +29,11 @@ const useAuth = () => {
     try {
       const data = await fetchData(ApiRoute.Login, requestOptions);
 
-      localStorage.setItem('token', JSON.stringify(data?.user?.token));
+      // We have to login first to check real data response
+      // I believe it'll be the same as in api docs.
+      localStorage.setItem('access_token', JSON.stringify(data?.user?.access_token));
+      localStorage.setItem('refresh_token', JSON.stringify(data?.user?.refresh_token));
+
       // set user data to user-store.js
     } catch (error) {
       // handle another errors from api or hook

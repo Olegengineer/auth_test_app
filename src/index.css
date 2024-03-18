@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Basis Grotesque Pro';
-  src: url('public/fonts/BasisGrotesquePro-Regular.ttf') format('ttf');
+  src: url('/fonts/BasisGrotesquePro-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -33,6 +33,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: 'Basis Grotesque Pro', sans-serif;
 }
 
 h1 {
