@@ -101,6 +101,7 @@ const LoginPage = () => {
           />
         </InputWrapper>
       </InputsContainer>
+      {/* TODO: create trigger for api errors regarding password */}
       {error.field === 'password' && (
         <Restore>
           <Link to="/forgot">Forgot your password?</Link>

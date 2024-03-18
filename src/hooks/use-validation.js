@@ -42,6 +42,13 @@ const useValidation = () => {
           setNotification('error', message);
           hasError = true;
         }
+        if (password?.length <= 8) {
+          // We can send message about length but it's not secure.
+          const message = 'Password incorrect';
+          setError({ field: 'password', message });
+          setNotification('error', message);
+          hasError = true;
+        }
         break;
       case 'newPassword':
         if (!newPassword) {
